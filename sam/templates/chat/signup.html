@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AI Chat Assistant</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-b from-primary-50 to-white flex items-center justify-center">
+        <div class="w-[400px] bg-white rounded-lg shadow-lg p-8">
+            <h1 class="text-4xl font-title text-center text-purple-600 mb-6 tracking-wide">Sign Up</h1>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="text-red-600 text-center mb-4">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="POST" class="space-y-6">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="space-y-1">
+                        <label for="{{ field.id_for_label }}" class="block text-lg font-medium">
+                            {{ field.label }}
+                        </label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-2 text-purple-300">
+                                {% if 'username' in field.name %}person{% else %}lock{% endif %}
+                            </span>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-red-600 text-sm mt-1">
+                                    {{ field.errors|join:", " }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <button type="submit"
+                    class="w-full px-4 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-600 focus:bg-purple-800 transition-all duration-300">
+                    Create Account
+                </button>
+            </form>
+
+            <p class="text-sm mt-4 text-center">
+                Already have an account? <a href="{% url 'login' %}" class="text-purple-600 hover:underline">Login</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

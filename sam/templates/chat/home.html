@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<div id="webcrumbs">
+    <div class="w-[1280px] bg-gradient-to-b from-primary-50 to-white font-sans">
+        <!-- Header -->
+        <header class="flex items-center justify-between p-6 border-b border-gray-200">
+            <div class="flex items-center">
+                <svg class="w-8 h-8 text-primary-600 transform hover:rotate-12 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 3.5C5.683 3.5 3 6.183 3 9.5C3 12.817 5.683 15.5 9 15.5C10.0368 15.5 11.0044 15.2037 11.8289 14.6938C12.0358 14.5504 12.2311 14.3949 12.4142 14.2275L19.5 21.3132L21.3132 19.5L14.2275 12.4142C14.3949 12.2311 14.5504 12.0358 14.6938 11.8289C15.2037 11.0044 15.5 10.0368 15.5 9.5C15.5 6.183 12.817 3.5 9.5 3.5C9.33294 3.5 9.16589 3.5085 9 3.52548V3.5Z" fill="currentColor"/>
+                </svg>
+                <h1 class="ml-3 text-xl font-bold text-primary-800">AI Chat Assistant</h1>
+            </div>
+            
+            {% if user.is_authenticated %}
+            <div class="flex items-center space-x-4">
+                <div class="relative h-8 w-8 rounded-full bg-primary-600 flex items-center justify-center text-white cursor-pointer hover:bg-primary-700 transition-colors duration-200 group">
+                    {{ user.username|slice:":2"|upper }}
+                    <div class="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden z-10 hidden group-hover:block">
+                        <div class="py-2">
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 flex items-center">
+                                    <span class="material-symbols-outlined mr-2">logout</span> Sign out
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex h-[calc(100vh-64px)]">
+            <!-- Sidebar -->
+            <aside class="w-[260px] p-4 border-r border-gray-200 overflow-y-auto">
+                <button id="new-chat" class="w-full flex items-center justify-center py-3 px-4 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-all duration-200 shadow-sm hover:shadow-md mb-4">
+                    <span class="material-symbols-outlined mr-2">add</span> New Chat
+                </button>
+                
+                <div class="mt-6">
+                    <h3 class="text-xs font-semibold text-gray-500 mb-3 uppercase">Recent conversations</h3>
+                    <ul id="conversation-list" class="space-y-2">
+                        {% for conversation in conversations %}
+                        <li class="p-2 rounded-md hover:bg-gray-100 cursor-pointer transition-colors duration-200 group" data-conversation-id="{{ conversation.id }}">
+                            <div class="flex items-center">
+                                <span class="material-symbols-outlined text-gray-400 mr-2 group-hover:text-primary-600">chat</span>
+                                <span class="text-sm truncate">{{ conversation.title }}</span>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <div class="flex-1 flex flex-col">
+                <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-6">
+                    <!-- Messages will be dynamically inserted here -->
+                </div>
+
+                <!-- Message Input -->
+                <div class="border-t border-gray-200 p-4">
+                    <div class="relative">
+                        <textarea id="message-input" class="w-full p-4 pr-24 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none h-[100px] bg-white" placeholder="Type your message here..."></textarea>
+                        <div class="absolute bottom-4 right-4">
+                            <button id="send-message" class="p-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors duration-200">
+                                <span class="material-symbols-outlined">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script>
+let currentConversationId = null;
+
+document.getElementById('new-chat').addEventListener('click', () => {
+    currentConversationId = null;
+    document.getElementById('chat-messages').innerHTML = '';
+});
+
+document.getElementById('send-message').addEventListener('click', sendMessage);
+document.getElementById('message-input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value.trim();
+    
+    if (!message) return;
+
+    // Disable input and button while processing
+    messageInput.disabled = true;
+    const sendButton = document.getElementById('send-message');
+    sendButton.disabled = true;
+
+    // Add user message to chat
+    addMessageToChat(message, false);
+    
+    // Clear input
+    messageInput.value = '';
+
+    // Send to backend
+    fetch('/get-response/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: new URLSearchParams({
+            'message': message,
+            'conversation_id': currentConversationId || ''
+        })
+    })
+    .then(async response => {
+        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(data.error || 'An error occurred');
+        }
+        return data;
+    })
+    .then(data => {
+        if (data.status === 'success') {
+            currentConversationId = data.conversation_id;
+            addMessageToChat(data.response, true);
+        } else {
+            throw new Error(data.error || 'An error occurred');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        addMessageToChat('Error: ' + error.message, true);
+    })
+    .finally(() => {
+        // Re-enable input and button
+        messageInput.disabled = false;
+        sendButton.disabled = false;
+    });
+}
+
+
+function addMessageToChat(message, isBot) {
+    console.log(1111);
+    const chatMessages = document.getElementById('chat-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'flex items-start mb-8';
+    
+    const userInitials = document.querySelector('.group')?.textContent?.trim().slice(0, 2) || 'U';
+    console.log(message)
+    
+    const avatar = isBot ? 
+        `<div class="p-2 rounded-lg bg-primary-100 mr-4">
+            <svg class="w-8 h-8 text-primary-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM12 7C12.552 7 13 7.448 13 8C13 8.552 12.552 9 12 9C11.448 9 11 8.552 11 8C11 7.448 11.448 7 12 7ZM13 17H11V10H13V17Z" fill="currentColor"/>
+            </svg>
+        </div>` :
+        `<div class="p-2 rounded-lg bg-gray-100 mr-4">
+            <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white">
+                ${userInitials}
+            </div>
+        </div>`;
+
+    messageDiv.innerHTML = `
+        ${avatar}
+        <div class="flex-1">
+            <div class="flex items-center mb-2">
+                <h3 class="font-semibold ${isBot ? 'text-primary-800' : ''}">${isBot ? 'AI Assistant' : 'You'}</h3>
+                <span class="ml-2 text-xs text-gray-500">Just now</span>
+            </div>
+            <p class="text-gray-700 whitespace-pre-wrap">${message}</p>
+        </div>
+    `;
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+ </script>
+</body>
+</html>

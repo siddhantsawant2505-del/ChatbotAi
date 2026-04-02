@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Genius Chatbot</title>
+        <style> 
+            @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+            @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+
+            /*! tailwindcss v3.4.11 | MIT License | https://tailwindcss.com*/
+            *,
+            :after,
+            :before {
+                border: 0 solid #e5e7eb;
+                box-sizing: border-box;
+            }
+            :after,
+            :before {
+                --tw-content: "";
+            }
+            :host,
+            html {
+                line-height: 1.5;
+                -webkit-text-size-adjust: 100%;
+                font-family:
+                    Open Sans,
+                    ui-sans-serif,
+                    system-ui,
+                    sans-serif,
+                    Apple Color Emoji,
+                    Segoe UI Emoji,
+                    Segoe UI Symbol,
+                    Noto Color Emoji;
+                font-feature-settings: normal;
+                font-variation-settings: normal;
+                -moz-tab-size: 4;
+                tab-size: 4;
+                -webkit-tap-highlight-color: transparent;
+            }
+            body {
+                line-height: inherit;
+                margin: 0;
+            }
+            hr {
+                border-top-width: 1px;
+                color: inherit;
+                height: 0;
+            }
+            abbr:where([title]) {
+                text-decoration: underline dotted;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: inherit;
+                font-weight: inherit;
+            }
+            a {
+                color: inherit;
+                text-decoration: inherit;
+            }
+            b,
+            strong {
+                font-weight: bolder;
+            }
+            code,
+            kbd,
+            pre,
+            samp {
+                font-family:
+                    ui-monospace,
+                    SFMono-Regular,
+                    Menlo,
+                    Monaco,
+                    Consolas,
+                    Liberation Mono,
+                    Courier New,
+                    monospace;
+                font-feature-settings: normal;
+                font-size: 1em;
+                font-variation-settings: normal;
+            }
+            small {
+                font-size: 80%;
+            }
+            sub,
+            sup {
+                font-size: 75%;
+                line-height: 0;
+                position: relative;
+                vertical-align: baseline;
+            }
+            sub {
+                bottom: -0.25em;
+            }
+            sup {
+                top: -0.5em;
+            }
+            table {
+                border-collapse: collapse;
+                border-color: inherit;
+                text-indent: 0;
+            }
+            button,
+            input,
+            optgroup,
+            select,
+            textarea {
+                color: inherit;
+                font-family: inherit;
+                font-feature-settings: inherit;
+                font-size: 100%;
+                font-variation-settings: inherit;
+                font-weight: inherit;
+                letter-spacing: inherit;
+                line-height: inherit;
+                margin: 0;
+                padding: 0;
+            }
+            button,
+            select {
+                text-transform: none;
+            }
+            button,
+            input:where([type="button"]),
+            input:where([type="reset"]),
+                <section
+                    class="flex items-center justify-between py-16 px-8 bg-gradient-to-r from-purple-900 to-purple-700 text-white"
+                >
+                    <div class="w-1/2 pr-12">
+                        <h2 class="text-5xl font-bold leading-tight mb-6">The Next Generation AI Assistant</h2>
+                        <p class="text-xl mb-8 text-purple-100">
+                            Experience the power of artificial intelligence with our state-of-the-art chatbot. Get
+                            instant answers, creative content, and solutions for all your needs.
+                        </p>
+                        <div class="flex space-x-4">
+                            <button
+                                class="px-8 py-3 bg-white text-purple-800 rounded-lg font-semibold hover:bg-purple-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                            >
+                                Try Now
+                            </button>
+                            <button
+                                class="px-8 py-3 bg-transparent border-2 border-white rounded-lg font-semibold hover:bg-purple-600 transform hover:scale-105 transition-all duration-300"
+                            >
+                                Learn More
+                            </button>
+                        </div>
+                        <div class="mt-10 flex items-center">
+                            <div class="flex -space-x-2">
+                                {% load static %}
+                                <img
+                                    src="{% static 'images/1.png' %}"
+                                    alt="Avatar"
+                                    class="w-10 h-10 rounded-full border-2 border-purple-500 transform hover:scale-110 transition-transform duration-300"
+                                />
+                                <img
+                                    src="{% static 'images/2.png' %}"
+                                    alt="Avatar"
+                                    class="w-10 h-10 rounded-full border-2 border-purple-500 transform hover:scale-110 transition-transform duration-300"
+                                />
+                                <img
+                                    src="{% static 'images/3.png' %}"
+                                    alt="Avatar"
+                                    class="w-10 h-10 rounded-full border-2 border-purple-500 transform hover:scale-110 transition-transform duration-300"
+                                />
+                            </div>
+                            <p class="ml-4 text-purple-200">
+                                Join over <span class="font-bold text-white">with Many other</span> satisfied users
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-1/2 flex justify-center">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-2xl w-[420px] transform transition-transform hover:scale-105 duration-500"
+                        >
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-purple-800">AIGenius</h3>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button
+                                        class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors duration-300"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors duration-300"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-purple-50 rounded-lg p-4 mb-4">
+                                <p class="text-gray-700">
+                                    Hello! I&#x27;m AIGenius, your personal AI assistant. How can I help you today?
+                                </p>
+                            </div>
+                            <div class="bg-purple-100 rounded-lg p-4 mb-4 ml-auto max-w-[80%]">
+                                <p class="text-gray-700">
+                                    Can you explain me the concepts of Pythagorus' Theorem?
+                                </p>
+                            </div>
+                            <div class="bg-purple-50 rounded-lg p-4 mb-4">
+                                <p class="text-gray-700">
+                                    Of course! Here&#x27;s a step-by-step explanation of Pythagorean theorem:
+                                 </p>
+                            </div>
+                            <div class="flex mt-4">
+                                <input
+                                    type="text"
+                                    placeholder="Type your message..."
+                                    class="flex-1 py-3 px-4 bg-purple-50 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                />
+                                <button
+                                    class="bg-purple-600 text-white px-4 rounded-r-lg hover:bg-purple-700 transition-colors duration-300"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-16 px-8 bg-white">
+                    <h2 class="text-3xl font-bold text-center text-purple-800 mb-4">Why Choose AIGenius?</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                        Our AI assistant combines cutting-edge technology of Google's Gemini with user-friendly design and prompts to deliver an
+                        exceptional experience.
+                    </p>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-purple-100 group"
+                        >
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8 text-purple-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Lightning Fast Responses</h3>
+                            <p class="text-gray-600">
+                                Get instant answers to your questions with our high-performance AI model
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-purple-100 group"
+                        >
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8 text-purple-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Advanced Learning</h3>
+                            <p class="text-gray-600">
+                                Our AI continuously improves and adapts to your specific needs and preferences
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-purple-100 group"
+                        >
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8 text-purple-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Top-notch Security</h3>
+                            <p class="text-gray-600">
+                                Your conversations and data are protected with enterprise-grade encryption and the answers to the prompt are answerd by Google's 
+                                Gemini AI prompt 
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-16 px-8 bg-purple-50">
+                    <div class="flex items-center justify-between">
+                        <div class="w-1/2 pr-12">
+                            <span
+                                class="inline-block bg-purple-200 text-purple-800 px-4 py-1 rounded-full text-sm font-medium mb-4"
+                                >AI-Powered Features</span
+                            >
+                            <h2 class="text-4xl font-bold mb-6 text-purple-800">
+                                Try the Full Potential of AI Assistance
+                            </h2>
+                            <p class="text-lg text-gray-600 mb-8">
+                                Our chatbot is equipped with advanced features designed to enhance your productivity and
+                                simplify your daily tasks with added fun facts and suggestions.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-purple-200 p-1 rounded-full mr-3 mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-700"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-purple-800">Natural Conversation</h3>
+                                        <p class="text-gray-600">
+                                            Interact with our AI in a human-like conversation that feels natural and
+                                            intuitive
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-purple-200 p-1 rounded-full mr-3 mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-700"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-purple-800">Fun Facts</h3>
+                                        <p class="text-gray-600">
+                                            Instead of basic recommendations, our AI provides engaging fun facts in a 
+                                            structured format making it easier to explain/ provide information on the topics asked
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-purple-200 p-1 rounded-full mr-3 mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-700"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-purple-800">Smart Suggestions</h3>
+                                        <p class="text-gray-600">
+                                            Receive intelligent recommendations based on your conversation history—all
+                                             with enhanced filters to ensure a kid-friendly experience.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button
+                                class="mt-8 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center group"
+                            >
+                                <span>Explore All Features</span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="w-1/2 flex justify-center">
+                            {% load static %}    
+                            <div
+                                class="relative w-[400px] h-[400px] bg-purple-200 rounded-2xl overflow-hidden shadow-xl transform hover:rotate-1 transition-transform duration-500"
+                            >
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="{% static 'images/AIGenius.png' %}" alt="AI Features Image" class="absolute inset-0 w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                -webkit-appearance: button;
+                background-color: transparent;
+                background-image: none;
+            }
+            :-moz-focusring {
+                outline: auto;
+            }
+            :-moz-ui-invalid {
+                box-shadow: none;
+            }
+            progress {
+                vertical-align: baseline;
+            }
+            ::-webkit-inner-spin-button,
+            ::-webkit-outer-spin-button {
+                height: auto;
+            }
+            [type="search"] {
+                -webkit-appearance: textfield;
+                outline-offset: -2px;
+            }
+            ::-webkit-search-decoration {
+                -webkit-appearance: none;
+            }
+            ::-webkit-file-upload-button {
+                -webkit-appearance: button;
+                font: inherit;
+            }
+            summary {
+                display: list-item;
+            }
+            blockquote,
+            dd,
+            dl,
+            figure,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            hr,
+            p,
+            pre {
+                margin: 0;
+            }
+            fieldset {
+                margin: 0;
+            }
+            fieldset,
+            legend {
+                padding: 0;
+            }
+            menu,
+            ol,
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            dialog {
+                padding: 0;
+            }
+            textarea {
+                resize: vertical;
+            }
+            input::placeholder,
+            textarea::placeholder {
+                color: #9ca3af;
+                opacity: 1;
+            }
+            [role="button"],
+            button {
+                cursor: pointer;
+            }
+            :disabled {
+                cursor: default;
+            }
+            audio,
+            canvas,
+            embed,
+            iframe,
+            img,
+            object,
+            svg,
+            video {
+                display: block;
+                vertical-align: middle;
+            }
+            img,
+            video {
+                height: auto;
+                max-width: 100%;
+            }
+            [hidden] {
+                display: none;
+            }
+            *,
+            :after,
+            :before {
+                --tw-border-spacing-x: 0;
+                --tw-border-spacing-y: 0;
+                --tw-translate-x: 0;
+                --tw-translate-y: 0;
+                --tw-rotate: 0;
+                --tw-skew-x: 0;
+                --tw-skew-y: 0;
+                --tw-scale-x: 1;
+                --tw-scale-y: 1;
+                --tw-pan-x: ;
+                --tw-pan-y: ;
+                --tw-pinch-zoom: ;
+                --tw-scroll-snap-strictness: proximity;
+                --tw-gradient-from-position: ;
+                --tw-gradient-via-position: ;
+                --tw-gradient-to-position: ;
+                --tw-ordinal: ;
+                --tw-slashed-zero: ;
+                --tw-numeric-figure: ;
+                --tw-numeric-spacing: ;
+                --tw-numeric-fraction: ;
+                --tw-ring-inset: ;
+                --tw-ring-offset-width: 0px;
+                --tw-ring-offset-color: #fff;
+                --tw-ring-color: rgba(59, 130, 246, 0.5);
+                --tw-ring-offset-shadow: 0 0 #0000;
+                --tw-ring-shadow: 0 0 #0000;
+                --tw-shadow: 0 0 #0000;
+                --tw-shadow-colored: 0 0 #0000;
+                --tw-blur: ;
+                --tw-brightness: ;
+                --tw-contrast: ;
+                --tw-grayscale: ;
+                --tw-hue-rotate: ;
+                --tw-invert: ;
+                --tw-saturate: ;
+                --tw-sepia: ;
+                --tw-drop-shadow: ;
+                --tw-backdrop-blur: ;
+                --tw-backdrop-brightness: ;
+                --tw-backdrop-contrast: ;
+                --tw-backdrop-grayscale: ;
+                --tw-backdrop-hue-rotate: ;
+                --tw-backdrop-invert: ;
+                --tw-backdrop-opacity: ;
+                --tw-backdrop-saturate: ;
+                --tw-backdrop-sepia: ;
+                --tw-contain-size: ;
+                --tw-contain-layout: ;
+                --tw-contain-paint: ;
+                --tw-contain-style: ;
+            }
+            ::backdrop {
+                --tw-border-spacing-x: 0;
+                --tw-border-spacing-y: 0;
+                --tw-translate-x: 0;
+                --tw-translate-y: 0;
+                --tw-rotate: 0;
+                --tw-skew-x: 0;
+                --tw-skew-y: 0;
+                --tw-scale-x: 1;
+                --tw-scale-y: 1;
+                --tw-pan-x: ;
+                --tw-pan-y: ;
+                --tw-pinch-zoom: ;
+                --tw-scroll-snap-strictness: proximity;
+                --tw-gradient-from-position: ;
+                --tw-gradient-via-position: ;
+                --tw-gradient-to-position: ;
+                --tw-ordinal: ;
+                --tw-slashed-zero: ;
+                --tw-numeric-figure: ;
+                --tw-numeric-spacing: ;
+                --tw-numeric-fraction: ;
+                --tw-ring-inset: ;
+                --tw-ring-offset-width: 0px;
+                --tw-ring-offset-color: #fff;
+                --tw-ring-color: rgba(59, 130, 246, 0.5);
+                --tw-ring-offset-shadow: 0 0 #0000;
+                --tw-ring-shadow: 0 0 #0000;
+                --tw-shadow: 0 0 #0000;
+                --tw-shadow-colored: 0 0 #0000;
+                --tw-blur: ;
+                --tw-brightness: ;
+                --tw-contrast: ;
+                --tw-grayscale: ;
+                --tw-hue-rotate: ;
+                --tw-invert: ;
+                --tw-saturate: ;
+                --tw-sepia: ;
+                --tw-drop-shadow: ;
+                --tw-backdrop-blur: ;
+                --tw-backdrop-brightness: ;
+                --tw-backdrop-contrast: ;
+                --tw-backdrop-grayscale: ;
+                --tw-backdrop-hue-rotate: ;
+                --tw-backdrop-invert: ;
+                --tw-backdrop-opacity: ;
+                --tw-backdrop-saturate: ;
+                --tw-backdrop-sepia: ;
+                --tw-contain-size: ;
+                --tw-contain-layout: ;
+                --tw-contain-paint: ;
+                --tw-contain-style: ;
+            }
+            #webcrumbs .absolute {
+                position: absolute;
+            }
+            #webcrumbs .relative {
+                position: relative;
+            }
+            #webcrumbs .inset-0 {
+                inset: 0;
+            }
+            #webcrumbs .mx-auto {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #webcrumbs .mb-12 {
+                margin-bottom: 48px;
+            }
+            #webcrumbs .mb-2 {
+                margin-bottom: 8px;
+            }
+            #webcrumbs .mb-4 {
+                margin-bottom: 16px;
+            }
+            #webcrumbs .mb-6 {
+                margin-bottom: 24px;
+            }
+            #webcrumbs .mb-8 {
+                margin-bottom: 32px;
+            }
+            #webcrumbs .ml-2 {
+                margin-left: 8px;
+            }
+            #webcrumbs .ml-4 {
+                margin-left: 16px;
+            }
+            #webcrumbs .ml-auto {
+                margin-left: auto;
+            }
+            #webcrumbs .mr-3 {
+                margin-right: 12px;
+            }
+            #webcrumbs .mt-1 {
+                margin-top: 4px;
+            }
+            #webcrumbs .mt-10 {
+                margin-top: 40px;
+            }
+            #webcrumbs .mt-4 {
+                margin-top: 16px;
+            }
+            #webcrumbs .mt-8 {
+                margin-top: 32px;
+            }
+            #webcrumbs .inline-block {
+                display: inline-block;
+            }
+            #webcrumbs .flex {
+                display: flex;
+            }
+            #webcrumbs .grid {
+                display: grid;
+            }
+            #webcrumbs .h-10 {
+                height: 40px;
+            }
+            #webcrumbs .h-16 {
+                height: 64px;
+            }
+            #webcrumbs .h-4 {
+                height: 16px;
+            }
+            #webcrumbs .h-5 {
+                height: 20px;
+            }
+            #webcrumbs .h-6 {
+                height: 24px;
+            }
+            #webcrumbs .h-8 {
+                height: 32px;
+            }
+            #webcrumbs .h-\[400px\] {
+                height: 400px;
+            }
+            #webcrumbs .w-1\/2 {
+                width: 50%;
+            }
+            #webcrumbs .w-10 {
+                width: 40px;
+            }
+            #webcrumbs .w-16 {
+                width: 64px;
+            }
+            #webcrumbs .w-4 {
+                width: 16px;
+            }
+            #webcrumbs .w-5 {
+                width: 20px;
+            }
+            #webcrumbs .w-6 {
+                width: 24px;
+            }
+            #webcrumbs .w-8 {
+                width: 32px;
+            }
+            #webcrumbs .w-\[1200px\] {
+                width: 1200px;
+            }
+            #webcrumbs .w-\[400px\] {
+                width: 400px;
+            }
+            #webcrumbs .w-\[420px\] {
+                width: 420px;
+            }
+            #webcrumbs .max-w-2xl {
+                max-width: 42rem;
+            }
+            #webcrumbs .max-w-\[80\%\] {
+                max-width: 80%;
+            }
+            #webcrumbs .flex-1 {
+                flex: 1 1 0%;
+            }
+            #webcrumbs .transform {
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+                    skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+            #webcrumbs .grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            #webcrumbs .flex-row {
+                flex-direction: row;
+            }
+            #webcrumbs .items-start {
+                align-items: flex-start;
+            }
+            #webcrumbs .items-center {
+                align-items: center;
+            }
+            #webcrumbs .justify-center {
+                justify-content: center;
+            }
+            #webcrumbs .justify-between {
+                justify-content: space-between;
+            }
+            #webcrumbs .gap-4 {
+                gap: 16px;
+            }
+            #webcrumbs .gap-8 {
+                gap: 32px;
+            }
+            #webcrumbs :is(.-space-x-2 > :not([hidden]) ~ :not([hidden])) {
+                --tw-space-x-reverse: 0;
+                margin-left: calc(-8px * (1 - var(--tw-space-x-reverse)));
+                margin-right: calc(-8px * var(--tw-space-x-reverse));
+            }
+            #webcrumbs :is(.space-x-2 > :not([hidden]) ~ :not([hidden])) {
+                --tw-space-x-reverse: 0;
+                margin-left: calc(8px * (1 - var(--tw-space-x-reverse)));
+                margin-right: calc(8px * var(--tw-space-x-reverse));
+            }
+            #webcrumbs :is(.space-x-4 > :not([hidden]) ~ :not([hidden])) {
+                --tw-space-x-reverse: 0;
+                margin-left: calc(16px * (1 - var(--tw-space-x-reverse)));
+                margin-right: calc(16px * var(--tw-space-x-reverse));
+            }
+            #webcrumbs :is(.space-x-8 > :not([hidden]) ~ :not([hidden])) {
+                --tw-space-x-reverse: 0;
+                margin-left: calc(32px * (1 - var(--tw-space-x-reverse)));
+                margin-right: calc(32px * var(--tw-space-x-reverse));
+            }
+            #webcrumbs :is(.space-y-4 > :not([hidden]) ~ :not([hidden])) {
+                --tw-space-y-reverse: 0;
+                margin-bottom: calc(16px * var(--tw-space-y-reverse));
+                margin-top: calc(16px * (1 - var(--tw-space-y-reverse)));
+            }
+            #webcrumbs .overflow-hidden {
+                overflow: hidden;
+            }
+            #webcrumbs .rounded-2xl {
+                border-radius: 48px;
+            }
+            #webcrumbs .rounded-full {
+                border-radius: 9999px;
+            }
+            #webcrumbs .rounded-lg {
+                border-radius: 24px;
+            }
+            #webcrumbs .rounded-xl {
+                border-radius: 36px;
+            }
+            #webcrumbs .rounded-l-lg {
+                border-bottom-left-radius: 24px;
+                border-top-left-radius: 24px;
+            }
+            #webcrumbs .rounded-r-lg {
+                border-bottom-right-radius: 24px;
+                border-top-right-radius: 24px;
+            }
+            #webcrumbs .border {
+                border-width: 1px;
+            }
+            #webcrumbs .border-2 {
+                border-width: 2px;
+            }
+            #webcrumbs .border-purple-100 {
+                --tw-border-opacity: 1;
+                border-color: rgb(243 232 255 / var(--tw-border-opacity));
+            }
+            #webcrumbs .border-purple-500 {
+                --tw-border-opacity: 1;
+                border-color: rgb(168 85 247 / var(--tw-border-opacity));
+            }
+            #webcrumbs .border-white {
+                --tw-border-opacity: 1;
+                border-color: rgb(255 255 255 / var(--tw-border-opacity));
+            }
+            #webcrumbs .bg-purple-100 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(243 232 255 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-purple-200 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(233 213 255 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-purple-50 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(250 245 255 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-purple-500 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(168 85 247 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-purple-600 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(147 51 234 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-purple-800 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(107 33 168 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-transparent {
+                background-color: transparent;
+            }
+            #webcrumbs .bg-white {
+                --tw-bg-opacity: 1;
+                background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .bg-gradient-to-r {
+                background-image: linear-gradient(to right, var(--tw-gradient-stops));
+            }
+            #webcrumbs .from-purple-900 {
+                --tw-gradient-from: #581c87 var(--tw-gradient-from-position);
+                --tw-gradient-to: rgba(88, 28, 135, 0) var(--tw-gradient-to-position);
+                --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+            }
+            #webcrumbs .to-purple-700 {
+                --tw-gradient-to: #7e22ce var(--tw-gradient-to-position);
+            }
+            #webcrumbs .fill-current {
+                fill: currentColor;
+            }
+            #webcrumbs .p-1 {
+                padding: 4px;
+            }
+            #webcrumbs .p-4 {
+                padding: 16px;
+            }
+            #webcrumbs .p-6 {
+                padding: 24px;
+            }
+            #webcrumbs .px-4 {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            #webcrumbs .px-6 {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            #webcrumbs .px-8 {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+            #webcrumbs .py-1 {
+                padding-bottom: 4px;
+                padding-top: 4px;
+            }
+            #webcrumbs .py-16 {
+                padding-bottom: 64px;
+                padding-top: 64px;
+            }
+            #webcrumbs .py-2 {
+                padding-bottom: 8px;
+                padding-top: 8px;
+            }
+            #webcrumbs .py-3 {
+                padding-bottom: 12px;
+                padding-top: 12px;
+            }
+            #webcrumbs .py-6 {
+                padding-bottom: 24px;
+                padding-top: 24px;
+            }
+            #webcrumbs .pr-12 {
+                padding-right: 48px;
+            }
+            #webcrumbs .text-center {
+                text-align: center;
+            }
+            #webcrumbs .font-sans {
+                font-family:
+                    Open Sans,
+                    ui-sans-serif,
+                    system-ui,
+                    sans-serif,
+                    Apple Color Emoji,
+                    Segoe UI Emoji,
+                    Segoe UI Symbol,
+                    Noto Color Emoji;
+            }
+            #webcrumbs .text-2xl {
+                font-size: 24px;
+                line-height: 31.200000000000003px;
+            }
+            #webcrumbs .text-3xl {
+                font-size: 30px;
+                line-height: 36px;
+            }
+            #webcrumbs .text-4xl {
+                font-size: 36px;
+                line-height: 41.4px;
+            }
+            #webcrumbs .text-5xl {
+                font-size: 48px;
+                line-height: 52.800000000000004px;
+            }
+            #webcrumbs .text-lg {
+                font-size: 18px;
+                line-height: 27px;
+            }
+            #webcrumbs .text-sm {
+                font-size: 14px;
+                line-height: 21px;
+            }
+            #webcrumbs .text-xl {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            #webcrumbs .font-bold {
+                font-weight: 700;
+            }
+            #webcrumbs .font-medium {
+                font-weight: 500;
+            }
+            #webcrumbs .font-semibold {
+                font-weight: 600;
+            }
+            #webcrumbs .leading-tight {
+                line-height: 1.25;
+            }
+            #webcrumbs .text-gray-600 {
+                --tw-text-opacity: 1;
+                color: rgb(75 85 99 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-gray-700 {
+                --tw-text-opacity: 1;
+                color: rgb(55 65 81 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-purple-100 {
+                --tw-text-opacity: 1;
+                color: rgb(243 232 255 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-purple-200 {
+                --tw-text-opacity: 1;
+                color: rgb(233 213 255 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-purple-600 {
+                --tw-text-opacity: 1;
+                color: rgb(147 51 234 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-purple-700 {
+                --tw-text-opacity: 1;
+                color: rgb(126 34 206 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-purple-800 {
+                --tw-text-opacity: 1;
+                color: rgb(107 33 168 / var(--tw-text-opacity));
+            }
+            #webcrumbs .text-white {
+                --tw-text-opacity: 1;
+                color: rgb(255 255 255 / var(--tw-text-opacity));
+            }
+            #webcrumbs .shadow-2xl {
+                --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            }
+            #webcrumbs .shadow-2xl,
+            #webcrumbs .shadow-lg {
+                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            }
+            #webcrumbs .shadow-lg {
+                --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+                --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            }
+            #webcrumbs .shadow-md {
+                --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+                --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            }
+            #webcrumbs .shadow-md,
+            #webcrumbs .shadow-xl {
+                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            }
+            #webcrumbs .shadow-xl {
+                --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+                --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            }
+            #webcrumbs .transition-all {
+                transition-duration: 0.15s;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #webcrumbs .transition-colors {
+                transition-duration: 0.15s;
+                transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #webcrumbs .transition-shadow {
+                transition-duration: 0.15s;
+                transition-property: box-shadow;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #webcrumbs .transition-transform {
+                transition-duration: 0.15s;
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #webcrumbs .duration-300 {
+                transition-duration: 0.3s;
+            }
+            #webcrumbs .duration-500 {
+                transition-duration: 0.5s;
+            }
+            #webcrumbs {
+                font-family: Open Sans !important;
+                font-size: 16px !important;
+            }
+            #webcrumbs .hover\:rotate-1:hover {
+                --tw-rotate: 1deg;
+            }
+            #webcrumbs .hover\:rotate-1:hover,
+            #webcrumbs .hover\:scale-105:hover {
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+                    skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+            #webcrumbs .hover\:scale-105:hover {
+                --tw-scale-x: 1.05;
+                --tw-scale-y: 1.05;
+            }
+            #webcrumbs .hover\:scale-110:hover {
+                --tw-scale-x: 1.1;
+                --tw-scale-y: 1.1;
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+                    skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+            #webcrumbs .hover\:bg-purple-100:hover {
+                --tw-bg-opacity: 1;
+                background-color: rgb(243 232 255 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .hover\:bg-purple-200:hover {
+                --tw-bg-opacity: 1;
+                background-color: rgb(233 213 255 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .hover\:bg-purple-600:hover {
+                --tw-bg-opacity: 1;
+                background-color: rgb(147 51 234 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .hover\:bg-purple-700:hover {
+                --tw-bg-opacity: 1;
+                background-color: rgb(126 34 206 / var(--tw-bg-opacity));
+            }
+            #webcrumbs .hover\:text-purple-200:hover {
+                --tw-text-opacity: 1;
+                color: rgb(233 213 255 / var(--tw-text-opacity));
+            }
+            #webcrumbs .hover\:shadow-xl:hover {
+                --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+                --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            }
+            #webcrumbs .focus\:outline-none:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+            }
+            #webcrumbs .focus\:ring-2:focus {
+                --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width)
+                    var(--tw-ring-offset-color);
+                --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width))
+                    var(--tw-ring-color);
+                box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+            }
+            #webcrumbs .focus\:ring-purple-600:focus {
+                --tw-ring-opacity: 1;
+                --tw-ring-color: rgb(147 51 234 / var(--tw-ring-opacity));
+            }
+            #webcrumbs :is(.group:hover .group-hover\:translate-x-1) {
+                --tw-translate-x: 4px;
+                transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+                    skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            }
+            #webcrumbs :is(.group:hover .group-hover\:bg-purple-200) {
+                --tw-bg-opacity: 1;
+                background-color: rgb(233 213 255 / var(--tw-bg-opacity));
+            }
+
+            body {
+                line-height: inherit;
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                min-width: 100vw;
+                min-height: 100vh;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, #ffffff, #d4d4d4);
+            }
+        </style>
+    </head>
+    <body>
+        <body style="background: url('{% static "images/texture.png" %}') no-repeat center center fixed; background-size: cover;">
+        <div id="webcrumbs">
+            <div class="w-[1200px] bg-white font-sans">
+                <header class="bg-purple-800 py-6 px-8 text-white">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                class="w-10 h-10 text-white fill-current"
+                            >
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm1.93 8.49c-.14-.18-.36-.29-.63-.29-.27 0-.48.11-.63.29-.14.18-.21.42-.21.71 0 .29.07.53.21.71.14.18.36.29.63.29.27 0 .48-.11.63-.29.14-.18.21-.42.21-.71 0-.29-.07-.53-.21-.71zM8.44 8.19c-.27 0-.48.11-.63.29-.14.18-.21.42-.21.71 0 .29.07.53.21.71.14.18.36.29.63.29.27 0 .48-.11.63-.29.14-.18.21-.42.21-.71 0-.29-.07-.53-.21-.71-.15-.18-.36-.29-.63-.29zm7.12 0c-.27 0-.48.11-.63.29-.14.18-.21.42-.21.71 0 .29.07.53.21.71.14.18.36.29.63.29.27 0 .48-.11.63-.29.14-.18.21-.42.21-.71 0-.29-.07-.53-.21-.71-.15-.18-.36-.29-.63-.29z"
+                                ></path>
+                            </svg>
+                            <h1 class="text-2xl font-bold">AIGenius</h1>
+                        </div>
+                        <nav>
+                            <ul class="flex space-x-8">
+                                <li>
+                                    <a
+                                        href="https://webcrumbs.cloud/placeholder"
+                                        class="text-white hover:text-purple-200 transition-colors duration-300"
+                                        >Home</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{% url 'features' %}" class="text-white hover:text-purple-200 transition-colors duration-300">
+                                        Features
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'games' %}" class="text-white hover:text-purple-200 transition-colors duration-300">
+                                        Games
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="flex space-x-4">
+                            <button
+                                class="px-4 py-2 bg-white text-purple-800 rounded-lg hover:bg-purple-100 transition-colors duration-300 font-medium"
+                            >
+                                Login
+                            </button>
+                            <button
+                                class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors duration-300 font-medium"
+                            >
+                                Sign Up
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <section
+                    class="flex items-center justify-between py-16 px-8 bg-gradient-to-r from-purple-900 to-purple-700 text-white"
+                >
+                    <div class="w-1/2 pr-12">
+                        <h2 class="text-5xl font-bold leading-tight mb-6">The Next Generation AI Assistant</h2>
+                        <p class="text-xl mb-8 text-purple-100">
+                            Experience the power of artificial intelligence with our state-of-the-art chatbot. Get
+                            instant answers, creative content, and solutions for all your needs.
+                        </p>
+                        <div class="flex space-x-4">
+                            <button
+                                class="px-8 py-3 bg-white text-purple-800 rounded-lg font-semibold hover:bg-purple-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                            >
+                                Try Now
+                            </button>
+                            <button
+                                class="px-8 py-3 bg-transparent border-2 border-white rounded-lg font-semibold hover:bg-purple-600 transform hover:scale-105 transition-all duration-300"
+                            >
+                                Learn More
+                            </button>
+                        </div>
+                        <div class="mt-10 flex items-center">
+                            <div class="flex -space-x-2">
+                                {% load static %}
+                                <img
+                                    src="{% static 'images/1.png' %}"
+                                    alt="Avatar"
+                                    class="w-10 h-10 rounded-full border-2 border-purple-500 transform hover:scale-110 transition-transform duration-300"
+                                />
+                                <img
+                                    src="{% static 'images/2.png' %}"
+                                    alt="Avatar"
+                                    class="w-10 h-10 rounded-full border-2 border-purple-500 transform hover:scale-110 transition-transform duration-300"
+                                />
+                                <img
+                                    src="{% static 'images/3.png' %}"
+                                    alt="Avatar"
+                                    class="w-10 h-10 rounded-full border-2 border-purple-500 transform hover:scale-110 transition-transform duration-300"
+                                />
+                            </div>
+                            <p class="ml-4 text-purple-200">
+                                Join over <span class="font-bold text-white">with Many other</span> satisfied users
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-1/2 flex justify-center">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-2xl w-[420px] transform transition-transform hover:scale-105 duration-500"
+                        >
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-6 w-6 text-white"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-purple-800">AIGenius</h3>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button
+                                        class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors duration-300"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition-colors duration-300"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-purple-50 rounded-lg p-4 mb-4">
+                                <p class="text-gray-700">
+                                    Hello! I&#x27;m AIGenius, your personal AI assistant. How can I help you today?
+                                </p>
+                            </div>
+                            <div class="bg-purple-100 rounded-lg p-4 mb-4 ml-auto max-w-[80%]">
+                                <p class="text-gray-700">
+                                    Can you explain me the concepts of Pythagorus' Theorem?
+                                </p>
+                            </div>
+                            <div class="bg-purple-50 rounded-lg p-4 mb-4">
+                                <p class="text-gray-700">
+                                    Of course! Here&#x27;s a step-by-step explanation of Pythagorean theorem:
+                                 </p>
+                            </div>
+                            <div class="flex mt-4">
+                                <input
+                                    type="text"
+                                    placeholder="Type your message..."
+                                    class="flex-1 py-3 px-4 bg-purple-50 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                                />
+                                <button
+                                    class="bg-purple-600 text-white px-4 rounded-r-lg hover:bg-purple-700 transition-colors duration-300"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                                        ></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-16 px-8 bg-white">
+                    <h2 class="text-3xl font-bold text-center text-purple-800 mb-4">Why Choose AIGenius?</h2>
+                    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                        Our AI assistant combines cutting-edge technology of Google's Gemini with user-friendly design and prompts to deliver an
+                        exceptional experience.
+                    </p>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-purple-100 group"
+                        >
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8 text-purple-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Lightning Fast Responses</h3>
+                            <p class="text-gray-600">
+                                Get instant answers to your questions with our high-performance AI model
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-purple-100 group"
+                        >
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8 text-purple-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Advanced Learning</h3>
+                            <p class="text-gray-600">
+                                Our AI continuously improves and adapts to your specific needs and preferences
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-purple-100 group"
+                        >
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 w-8 text-purple-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Top-notch Security</h3>
+                            <p class="text-gray-600">
+                                Your conversations and data are protected with enterprise-grade encryption and the answers to the prompt are answerd by Google's 
+                                Gemini AI prompt 
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-16 px-8 bg-purple-50">
+                    <div class="flex items-center justify-between">
+                        <div class="w-1/2 pr-12">
+                            <span
+                                class="inline-block bg-purple-200 text-purple-800 px-4 py-1 rounded-full text-sm font-medium mb-4"
+                                >AI-Powered Features</span
+                            >
+                            <h2 class="text-4xl font-bold mb-6 text-purple-800">
+                                Try the Full Potential of AI Assistance
+                            </h2>
+                            <p class="text-lg text-gray-600 mb-8">
+                                Our chatbot is equipped with advanced features designed to enhance your productivity and
+                                simplify your daily tasks with added fun facts and suggestions.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-purple-200 p-1 rounded-full mr-3 mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-700"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-purple-800">Natural Conversation</h3>
+                                        <p class="text-gray-600">
+                                            Interact with our AI in a human-like conversation that feels natural and
+                                            intuitive
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-purple-200 p-1 rounded-full mr-3 mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-700"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-purple-800">Fun Facts</h3>
+                                        <p class="text-gray-600">
+                                            Instead of basic recommendations, our AI provides engaging fun facts in a 
+                                            structured format making it easier to explain/ provide information on the topics asked
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-purple-200 p-1 rounded-full mr-3 mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-4 w-4 text-purple-700"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-purple-800">Smart Suggestions</h3>
+                                        <p class="text-gray-600">
+                                            Receive intelligent recommendations based on your conversation history—all
+                                             with enhanced filters to ensure a kid-friendly experience.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button
+                                class="mt-8 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center group"
+                            >
+                                <span>Explore All Features</span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="w-1/2 flex justify-center">
+                            {% load static %}    
+                            <div
+                                class="relative w-[400px] h-[400px] bg-purple-200 rounded-2xl overflow-hidden shadow-xl transform hover:rotate-1 transition-transform duration-500"
+                            >
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="{% static 'images/AIGenius.png' %}" alt="AI Features Image" class="absolute inset-0 w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
